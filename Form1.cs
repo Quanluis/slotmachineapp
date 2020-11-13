@@ -10,11 +10,37 @@ using System.Windows.Forms;
 
 namespace slotmachineapp
 {
-    public partial class Form1 : Form
+    public partial class currencyLabel : Form
     {
-        public Form1()
+
+        
+
+        public currencyLabel()
         {
             InitializeComponent();
         }
+
+        double money;
+        
+           
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+
+            money = double.Parse(countLabel.Text);
+
+
+            if (money > 0)
+            {
+                
+
+            } else
+            {
+                MessageBox.Show("Please insert currency.");
+
+            }
+
+        }
+
     }
 }
