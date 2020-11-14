@@ -57,6 +57,7 @@
             this.rollThree.Location = new System.Drawing.Point(522, 151);
             this.rollThree.Name = "rollThree";
             this.rollThree.Size = new System.Drawing.Size(95, 84);
+            this.rollThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rollThree.TabIndex = 1;
             this.rollThree.TabStop = false;
             // 
@@ -66,6 +67,7 @@
             this.rollTwo.Location = new System.Drawing.Point(356, 150);
             this.rollTwo.Name = "rollTwo";
             this.rollTwo.Size = new System.Drawing.Size(95, 85);
+            this.rollTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rollTwo.TabIndex = 2;
             this.rollTwo.TabStop = false;
             // 
@@ -75,6 +77,7 @@
             this.rollOne.Location = new System.Drawing.Point(199, 151);
             this.rollOne.Name = "rollOne";
             this.rollOne.Size = new System.Drawing.Size(95, 84);
+            this.rollOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rollOne.TabIndex = 3;
             this.rollOne.TabStop = false;
             // 
@@ -87,6 +90,7 @@
             this.spinButton.TabIndex = 4;
             this.spinButton.Text = "SPIN!";
             this.spinButton.UseVisualStyleBackColor = true;
+            this.spinButton.Click += new System.EventHandler(this.spinButton_Click);
             // 
             // countLabel
             // 
