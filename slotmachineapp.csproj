@@ -80,7 +80,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\fruit logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Watermelon.bmp" />
     <None Include="Resources\Strawberry.bmp" />

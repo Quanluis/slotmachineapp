@@ -17,11 +17,15 @@ namespace slotmachineapp
         {
             InitializeComponent();
         }
+        
+        // Global variables
 
         double money;
 
         int firstSpin, secondSpin, thirdSpin;
-           
+
+
+        // Play button
 
         private void playButton_Click(object sender, EventArgs e)
         {
@@ -30,26 +34,33 @@ namespace slotmachineapp
 
             if (money > 0)
             {
+
                 spinButton.Enabled = true;
                 countLabel.ReadOnly = true;
                 playButton.Enabled = false;
+                reset.Enabled = true;
 
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please insert currency.");
-
+                
             }
 
         }
 
+        // Spin button
+
         private void spinButton_Click(object sender, EventArgs e)
         {
+
+            money = double.Parse(countLabel.Text);
+
             Random rnd = new Random();
 
             firstSpin = rnd.Next(1, 11);
             secondSpin = rnd.Next(1, 11);
             thirdSpin = rnd.Next(1, 11);
-            
 
             // Spin one
 
@@ -95,7 +106,6 @@ namespace slotmachineapp
             }
 
             // Spin two
-
 
             if (secondSpin == 1)
             {
@@ -181,6 +191,82 @@ namespace slotmachineapp
                 rollThree.Image = Properties.Resources.Watermelon;
             }
 
+
+            // Spin outcome results 
+
+            if ((firstSpin == secondSpin) & (secondSpin == thirdSpin))
+            {
+                MessageBox.Show("JACKPOT!");
+
+                money = money * 3;
+            }
+            else if (firstSpin == secondSpin)
+            {
+                MessageBox.Show("You rolled doubles");
+
+                money = money * 2;
+            }
+            else if (firstSpin == thirdSpin)
+            {
+                MessageBox.Show("You rolled doubles");
+
+                money = money * 2;
+
+            }
+            else if (secondSpin == thirdSpin)
+            {
+                MessageBox.Show("You rolled doubles");
+
+                money = money * 2;
+
+            } else
+            {
+                money = money - money / 3;
+            }
+
+            // Cashout outcome if money is not enough for a spin
+
+            if (money <= 0.1)
+            {
+                MessageBox.Show("Cash out!");
+
+                spinButton.Enabled = false;
+
+                exitButton.Enabled = false;
+
+            }
+
+            countLabel.Text = money.ToString("F");
+
+        }        
+
+        // Reset button / Cashout
+
+        private void reset_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show($"Amount won: ${countLabel.Text}");
+
+            playButton.Enabled = true;
+            countLabel.ReadOnly = false;
+            exitButton.Enabled = true;
+            reset.Enabled = false;
+            spinButton.Enabled = false;
+
+            rollOne.Image = null;
+            rollTwo.Image = null;
+            rollThree.Image = null;
+
+            countLabel.Text = "";
+
         }
+
+        // Exit button
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

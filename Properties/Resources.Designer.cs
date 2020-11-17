@@ -93,6 +93,16 @@ namespace slotmachineapp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fruit_logo {
+            get {
+                object obj = ResourceManager.GetObject("fruit logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grapes {
             get {
                 object obj = ResourceManager.GetObject("Grapes", resourceCulture);

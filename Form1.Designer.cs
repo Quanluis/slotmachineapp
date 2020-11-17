@@ -37,9 +37,13 @@
             this.playButton = new System.Windows.Forms.Button();
             this.instructionLabel = new System.Windows.Forms.Label();
             this.currency = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.reset = new System.Windows.Forms.Button();
+            this.gamePic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.rollThree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rollTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rollOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gamePic)).BeginInit();
             this.SuspendLayout();
             // 
             // mainLabel
@@ -127,11 +131,45 @@
             this.currency.TabIndex = 8;
             this.currency.Text = "$";
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(633, 386);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 9;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // reset
+            // 
+            this.reset.Enabled = false;
+            this.reset.Location = new System.Drawing.Point(522, 386);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(75, 23);
+            this.reset.TabIndex = 10;
+            this.reset.Text = "Cash out!";
+            this.reset.UseVisualStyleBackColor = true;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
+            // 
+            // gamePic
+            // 
+            this.gamePic.Image = global::slotmachineapp.Properties.Resources.fruit_logo;
+            this.gamePic.Location = new System.Drawing.Point(12, 12);
+            this.gamePic.Name = "gamePic";
+            this.gamePic.Size = new System.Drawing.Size(64, 54);
+            this.gamePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gamePic.TabIndex = 11;
+            this.gamePic.TabStop = false;
+            // 
             // currencyLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gamePic);
+            this.Controls.Add(this.reset);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.currency);
             this.Controls.Add(this.instructionLabel);
             this.Controls.Add(this.playButton);
@@ -146,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rollThree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rollTwo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rollOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gamePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +201,9 @@
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Label instructionLabel;
         private System.Windows.Forms.Label currency;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button reset;
+        private System.Windows.Forms.PictureBox gamePic;
     }
 }
 
